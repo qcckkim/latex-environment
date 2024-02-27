@@ -134,7 +134,7 @@ local function writeCommands(spanEl)
         -- attach the raw inlines to the span contents
         local result = spanEl.content
         print(result)
-        if result ~= nil then
+        if result !="[]" then
           local beginCommandRaw = pandoc.RawInline('latex', beginCommand .. '{')
           local endCommandRaw = pandoc.RawInline('latex', '}')
           table.insert(result, 1, beginCommandRaw)
